@@ -1,15 +1,10 @@
-#h2-database-server:
-#  image: oscarfonts/h2:1.1.119
-#  hostname: h2server.mageddo.dev
-#  ports:
-#    - 1521
-#    - 81
-sparkjava-springboot:
-  image: openjdk:8-jre
-  hostname: "bank-api.mageddo.dev"
-  volumes:
-    - $PWD/build/distributions:/opt/spring
-  working_dir: /opt/spring
-  command: bash -c 'export _JAVA_OPTIONS="-Xmx45m -Xss256k" && tar -xf *.tar && bank-api-*/bin/bank-api'
-  mem_limit: 50m
-  memswap_limit: 0
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: store
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql01
+    ports:
+      - 3306:3306

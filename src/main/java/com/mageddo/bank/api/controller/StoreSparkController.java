@@ -1,34 +1,24 @@
 package com.mageddo.bank.api.controller;
 
-import static spark.Spark.get;
-import static spark.Spark.post;
-
-import java.util.List;
-
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mageddo.bank.api.config.Spark;
-import com.mageddo.bank.api.entity.CustomerEntity;
-import com.mageddo.bank.api.service.CustomerService;
-import com.mageddo.bank.api.service.ManyCustomersService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.mageddo.bank.api.config.Spark;
+import com.mageddo.bank.api.service.StoreService;
+
 @Component
-public class CustomerSparkController implements Spark {
+public class StoreSparkController implements Spark {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(CustomerSparkController.class);
-
-    @Autowired
-    private CustomerService customerService;
+    private static Logger LOGGER = LoggerFactory.getLogger(StoreSparkController.class);
 
     @Autowired
-    private ManyCustomersService manyCustomersService;
+    private StoreService customerService;
+
 
     @Override
-    public void register() {
+    public void register() {/*
         get("/customer/:customerName", (request, response) -> {
             final String name = request.params(":customerName");
             final List<CustomerEntity> customerEntities = customerService.findByName(name);
@@ -55,6 +45,6 @@ public class CustomerSparkController implements Spark {
             LOGGER.info("msg=hello");
             return "Hello World from controller!!!";
         });
-    }
+    */}
 
 }

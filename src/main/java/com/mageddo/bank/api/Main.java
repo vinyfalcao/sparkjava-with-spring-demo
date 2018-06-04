@@ -6,9 +6,6 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 
-/**
- * Created by elvis on 26/08/16.
- */
 @SpringBootApplication
 @EnableAutoConfiguration(exclude = SparkConfiguration.class)
 @Import(SparkConfiguration.class)
